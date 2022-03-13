@@ -163,3 +163,11 @@ const displayReportedPosts = () => {
     document.getElementById("reported").appendChild(div);
   });
 };
+
+const loadPosts = async () => {
+  let data = await fetch('../data/posts.json');
+  posts = await data.json();
+  showPosts(posts);
+}
+
+loadPosts();
